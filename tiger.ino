@@ -15,5 +15,5 @@ void setup() {
 }
 
 void loop() {
-    Serial.print();
+    Serial.print(sensor[0]);
 }
