@@ -2,12 +2,13 @@
 #define LFSensor_2 A1 //line follow sensor2
 
 void setup() {
-  /*line follow sensors */
-    sensor[0]=digitalRead(LFSensor_1);
-    sensor[1]=digitalRead(LFSensor_2);
+    /*line follow sensors */
     Serial.begin(9600);
 }
 
-void loop() {
-    Serial.println("");
+void loop(){
+    //print info
+    int data = Serial.read();
+    Serial.println(data);
+    delay (1000);
 }
