@@ -144,14 +144,21 @@ void setup() {
     pinMode(echo, INPUT);
     digitalWrite(trig, LOW);
     
+    pinMode(buzzer, OUTPUT);
+    digitalWrite(buzzer, HIGH);
+    buzz_off();
+    
+    head.attach(SERVO);
+    head.write(90);
+    
     Serial.begin(9600);
+    go_stop();
     Serial.println("<Arduino is ready>");
 }
 
 void loop(){
     //avoidance
     auto_avoidance();
-    //print info
     
     int senL = analogRead(A0);
     int senR = analogRead(A1);
