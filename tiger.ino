@@ -12,8 +12,7 @@ void loop(){
     int senL = analogRead(A0);
     int senR = analogRead(A1);
     
-    Serial.print(senL);
-    Serial.print(senR);
-    Serial.print('\n');
+    Serial.println(senL);
+    Serial.println(senR);
     delay (1000);
 }
