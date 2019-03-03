@@ -4,6 +4,52 @@
 #define LFSensor_1 A0 //line follow sensor1
 #define LFSensor_2 A1 //line follow sensor2
 
+void go_ahead()//go ahead
+{
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4,HIGH);
+  //delay(t);
+}
+void go_back() //go back
+{
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4,LOW); 
+  //delay(t);
+}
+void go_stop() //stop
+{
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4,LOW); 
+}
+void turn_left()//turn left
+{
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
+  //delay(t);
+}
+void turn_right()//turn right
+{
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+  //delay(t);
+}
+
+void alarm() {
+  buzz_on();
+  delay(100);
+  buzz_off();
+}
+
 void auto_avoidance() {
   head.write(90); 
   delay(100);
