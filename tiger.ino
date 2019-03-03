@@ -9,9 +9,11 @@ void setup() {
 
 void loop(){
     //print info
-    int sensorValue = analogRead(A0);
-    int data = Serial.read();
-    Serial.println(data);
-    Serial.print(sensorValue);
+    int senL = analogRead(A0);
+    int senR = analogRead(A1);
+    
+    Serial.print(senL);
+    Serial.print(senR);
+    Serial.print('\n');
     delay (1000);
 }
