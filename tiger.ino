@@ -8,7 +8,7 @@ void setup() {
 
 void loop(){
     //print info
-    int data = Serial.read();
+    int data = Serial.read(LFSensor_1);
     Serial.println(data);
     delay (1000);
 }
