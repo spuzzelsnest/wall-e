@@ -1,5 +1,56 @@
+#include <Servo.h>
+#define SERVO      11  //servo connect to D11
+#define buzzer     7 //buzzer connect to D7
 #define LFSensor_1 A0 //line follow sensor1
 #define LFSensor_2 A1 //line follow sensor2
+
+void auto_avoidance() {
+  head.write(90); 
+  delay(100);
+  centerscanval = watch();
+  if (centerscanval >= distancelimit) {
+    set_motorspeed(LSPEED, RSPEED);
+    go_ahead();
+  }
+  else {
+    go_stop();
+    alarm();
+    head.write(120);
+    delay(150);
+    ldiagonalscanval = watch();
+
+    head.write(180);
+    delay(150);
+    leftscanval = watch();
+
+    head.write(90);
+    delay(150);
+
+    head.write(60);
+    delay(150);
+    rdiagonalscanval = watch();
+
+    head.write(0);
+    delay(150);
+    rightscanval = watch();
+
+    head.write(90);
+    if (ldiagonalscanval >= sidedistancelimit && leftscanval >= sidedistancelimit) {
+      set_motorspeed(LSPEED, RSPEED);
+      go_back();
+      delay(200);
+      turn_left();
+      delay(500);
+    }
+    else if (rdiagonalscanval >= sidedistancelimit && rightscanval >= sidedistancelimit) {
+      set_motorspeed(LSPEED, RSPEED);
+      go_back();
+      delay(200);
+      turn_right();
+      delay(500);
+    }
+  }
+}
 
 void setup() {
     /*line follow sensors */
@@ -8,7 +59,10 @@ void setup() {
 }
 
 void loop(){
+    //avoidance
+    auto_avoidance();
     //print info
+    
     int senL = analogRead(A0);
     int senR = analogRead(A1);
     
