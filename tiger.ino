@@ -5,10 +5,14 @@
 #define IN2  9     //K1、K2 motor direction
 #define IN3  10    //K3、K4 motor direction
 #define IN4  12   //K3、K4 motor direction
+#define ENA  5    // Needs to be a PWM pin to be able to control motor speed ENA
+#define ENB  6   
 #define LFSensor_1 A0 //line follow sensor1
 #define LFSensor_2 A1 //line follow sensor2
 #define RSPEED   255  //right motor speed
 #define LSPEED   255 
+#define echo    A3
+#define trig    A2
 
 Servo head;
 int leftscanval, centerscanval, rightscanval, ldiagonalscanval, rdiagonalscanval;
