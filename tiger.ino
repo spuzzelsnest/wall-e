@@ -3,6 +3,8 @@
 #define buzzer     7 //buzzer connect to D7
 #define LFSensor_1 A0 //line follow sensor1
 #define LFSensor_2 A1 //line follow sensor2
+#define RSPEED   255  //right motor speed
+#define LSPEED   255 
 
 void go_ahead()//go ahead
 {
@@ -42,6 +44,13 @@ void turn_right()//turn right
   digitalWrite(IN3, HIGH);
   digitalWrite(IN4, LOW);
   //delay(t);
+}
+
+void buzz_on(){
+  digitalWrite(buzzer, LOW);
+}
+void buzz_off(){
+    digitalWrite(buzzer, HIGH);
 }
 
 void alarm() {
