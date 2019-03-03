@@ -1,10 +1,19 @@
 #include <Servo.h>
 #define SERVO      11  //servo connect to D11
 #define buzzer     7 //buzzer connect to D7
+#define IN1  8   //K1、K2 motor direction
+#define IN2  9     //K1、K2 motor direction
+#define IN3  10    //K3、K4 motor direction
+#define IN4  12   //K3、K4 motor direction
 #define LFSensor_1 A0 //line follow sensor1
 #define LFSensor_2 A1 //line follow sensor2
 #define RSPEED   255  //right motor speed
 #define LSPEED   255 
+
+Servo head;
+int leftscanval, centerscanval, rightscanval, ldiagonalscanval, rdiagonalscanval;
+const int distancelimit = 30; //distance limit for obstacles in front           
+const int sidedistancelimit = 18; //minimum distance in cm to obstacles at both sides (the car will allow a shorter distance sideways)
 
 void go_ahead()//go ahead
 {
@@ -46,6 +55,11 @@ void turn_right()//turn right
   //delay(t);
 }
 
+void set_motorspeed(int lspeed,int rspeed){
+  analogWrite(ENA,lspeed); 
+  analogWrite(ENB,rspeed);   
+}
+
 void buzz_on(){
   digitalWrite(buzzer, LOW);
 }
@@ -57,6 +71,19 @@ void alarm() {
   buzz_on();
   delay(100);
   buzz_off();
+}
+
+int watch() {
+  long howfar;
+  digitalWrite(trig, LOW);
+  delayMicroseconds(5);
+  digitalWrite(trig, HIGH);
+  delayMicroseconds(15);
+  digitalWrite(trig, LOW);
+  howfar = pulseIn(echo, HIGH);
+  howfar = howfar * 0.01657; //how far away is the object in cm
+  Serial.println((int)howfar);
+  return round(howfar);
 }
 
 void auto_avoidance() {
