@@ -167,5 +167,6 @@ void loop(){
     Serial.println(data);
     Serial.println(senL);
     Serial.println(senR);
+    Serial.println('endLoop')
     delay (1000);
 }
