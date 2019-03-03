@@ -62,3 +62,5 @@ void set_motorspeed(int lspeed,int rspeed)  //change motor speed
   turn_right(),delay(5000),go_stop();//robot turn right 5s
   go_stop();//stop
 }
+void loop() {
+}
