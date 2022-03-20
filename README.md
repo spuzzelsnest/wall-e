@@ -25,24 +25,21 @@ Arduino is a pacakage where we will use the arduino-cli command to interact with
 First we will create a new directory to store our program and config files, or download the GIT Repository.
 
 
-'''
-
 	git clone https://github.com/spuzzelsnest/Tiger.git
 	cd Tiger
-'''
+
 
 To search and install the needed lirbraries you can use the following commands
 
-'''
+
 	arduino-cli lib search servo
 
-		Updating index: library_index.json downloaded 
-
-		[ LIST CUT FROM EXAMPLE]
+	  Updating index: library_index.json downloaded 
+	  [ LIST CUT FROM EXAMPLE]
 
 	arduino-cli lib install Servo
 	arduino-cli lib list
-'''
+
 
 To compile the file and store it on the Arduino
 
