@@ -12,11 +12,9 @@ Updating your Pi and installing the software needed:
 
 
 '''
-
-sudo apt update
-sudo apt full-upgrade
-sudo apt install minicom arduino
-
+	sudo apt update
+	sudo apt full-upgrade
+	sudo apt install minicom arduino
 '''
 
 Minicom is a clone of the MS-DOS "Telix" communication program. It emulates ANSI and VT102 terminals, has a dialing directory and auto zmodem download.
@@ -28,36 +26,29 @@ First we will create a new directory to store our program and config files, or d
 
 
 '''
+	git clone https://github.com/spuzzelsnest/Tiger.git
 
-git clone https://github.com/spuzzelsnest/Tiger.git
-
-cd Tiger
-
+	cd Tiger
 '''
 
 To search and install the needed lirbraries you can use the following commands
 
 '''
+	arduino-cli lib search servo
 
-arduino-cli lib search servo
+		Updating index: library_index.json downloaded 
 
-	Updating index: library_index.json downloaded 
+		[ LIST CUT FROM EXAMPLE]
 
-	[ LIST CUT FROM EXAMPLE]
-
-arduino-cli lib install Servo
-
-
-arduino-cli lib list
-
+	arduino-cli lib install Servo
+	arduino-cli lib list
 '''
 
 To compile the file and store it on the Arduino
 
 
 '''
-
-adruino-cli compile --fqbn arduino:avr:uno Exanple
+	adruino-cli compile --fqbn arduino:avr:uno Exanple
 
 '''
 
@@ -65,8 +56,6 @@ adruino-cli compile --fqbn arduino:avr:uno Exanple
 To connect to the Arduino we can use the Screen command
 
 '''
-
-screen /dev/ttyACM0 9600
-
+	screen /dev/ttyACM0 9600
 '''
 
