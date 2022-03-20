@@ -44,15 +44,10 @@ To search and install the needed lirbraries you can use the following commands
 To compile the file and store it on the Arduino
 
 
-'''
 	adruino-cli compile --fqbn arduino:avr:uno Exanple
-
-'''
 
 
 To connect to the Arduino we can use the Screen command
 
-'''
-	screen /dev/ttyACM0 9600
-'''
 
+	screen /dev/ttyACM0 9600
