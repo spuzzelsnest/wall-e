@@ -11,12 +11,11 @@ As it fitted really nice under the hood, I connected the Arduino Uno to the Rasp
 Updating your Pi and installing the software needed:
 
 
-'''
 
 	sudo apt update
 	sudo apt full-upgrade
 	sudo apt install minicom arduino
-'''
+
 
 Minicom is a clone of the MS-DOS "Telix" communication program. It emulates ANSI and VT102 terminals, has a dialing directory and auto zmodem download.
 In this project we will use it to connect to the arduino 
