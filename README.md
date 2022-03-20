@@ -1,4 +1,4 @@
-### Wall-E project
+## Wall-E project
 
 A couple of years ago, I bought an arduino robot tank kit from <a href="https://kookye.com/2017/08/20/kookye-robot-tank-car-starter-kit-tutorial-introduction/">Kooky.</a>
 The pakages included the Tank chasis, 2 tracks, 2 motors, 2 lights, a proximity meter, a buzzer, and an Arduino UNO + expantionboard for controlling the motors.
@@ -6,7 +6,7 @@ I decided to add an raspberry pi 3 B and a logitec webcam I had laying around.
 
 As it fitted really nice under the hood, I connected the Arduino Uno to the Raspberry pi. This way I could connect over SSH to the Machine and upload the Adruino files directly.
 
-## Connecting the Pi to the Adruino 
+### Connecting the Pi to the Adruino 
 
 Updating your Pi and installing the software needed:
 
@@ -25,8 +25,8 @@ Arduino is a pacakage where we will use the arduino-cli command to interact with
 First we will create a new directory to store our program and config files, or download the GIT Repository.
 
 
-	git clone https://github.com/spuzzelsnest/Tiger.git
-	cd Tiger
+	git clone https://github.com/spuzzelsnest/wall-e.git
+	cd wall-e
 
 
 To search and install the needed lirbraries you can use the following commands
@@ -40,6 +40,14 @@ To search and install the needed lirbraries you can use the following commands
 	arduino-cli lib install Servo
 	arduino-cli lib list
 
+
+### Examples
+
+Added to the repository are 2 ino files preconfigured.
+- automotiion.ino
+	Make the robot run independent.
+- wall-e.ino
+	drive the robot over ssh with screen and the w,a,s,d keys
 
 To compile the file and store it on the Arduino
 
