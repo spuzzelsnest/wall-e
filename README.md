@@ -18,7 +18,7 @@ Updating your Pi and installing the software needed:
 
 
 Minicom is a clone of the MS-DOS "Telix" communication program. It emulates ANSI and VT102 terminals, has a dialing directory and auto zmodem download.
-In this project we will use it to connect to the arduino 
+In this project we will use it to connect to the arduino.
 
 Arduino is a pacakage where we will use the arduino-cli command to interact with the Arduino UNO
 
