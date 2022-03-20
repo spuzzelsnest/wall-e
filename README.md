@@ -12,6 +12,7 @@ Updating your Pi and installing the software needed:
 
 
 '''
+
 	sudo apt update
 	sudo apt full-upgrade
 	sudo apt install minicom arduino
@@ -26,8 +27,8 @@ First we will create a new directory to store our program and config files, or d
 
 
 '''
-	git clone https://github.com/spuzzelsnest/Tiger.git
 
+	git clone https://github.com/spuzzelsnest/Tiger.git
 	cd Tiger
 '''
 
